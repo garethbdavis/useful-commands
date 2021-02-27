@@ -9,15 +9,21 @@ wget -q https://registry.hub.docker.com/v1/repositories/alpine/tags -O -  | sed 
 
 
 Create a container with an interactive shell
-```bash
+```shell
 docker run -it --entrypoint /bin/sh alpine:latest
 ```
 
 ## find/replace
 
 Replace all occurances of a term in a git repo\
-Linux: `git grep -l 'original_text' | xargs sed -i 's/original_text/new_text/g'`\
-Mac: `git grep -l 'original_text' | xargs sed -i '' -e 's/original_text/new_text/g'`
+Linux:
+```shell
+git grep -l 'original_text' | xargs sed -i 's/original_text/new_text/g'
+```
+Mac:
+```shell
+git grep -l 'original_text' | xargs sed -i '' -e 's/original_text/new_text/g'
+```
 
 ## MySQL
 
