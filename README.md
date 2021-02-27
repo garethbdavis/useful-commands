@@ -7,10 +7,16 @@ Get all tags for a docker repository - alpine in the example
 wget -q https://registry.hub.docker.com/v1/repositories/alpine/tags -O -  | sed -e 's/[][]//g' -e 's/"//g' -e 's/ //g' | tr '}' '\n'  | awk -F: '{print $3}'
 ```
 
-
 Create a container with an interactive shell
 ```shell
 docker run -it --entrypoint /bin/sh alpine:latest
+```
+
+## kubectl
+
+open a shell into a container in a pod with a specific label
+```shell
+kubectl exec -it $(kubectl get pods -l "app=my-app" -o jsonpath='{.items[0].metadata.name}') -c my-container -- /bin/sh
 ```
 
 ## find/replace
@@ -38,4 +44,3 @@ undo commit
 ```shell
 git reset HEAD~
 ```
-
