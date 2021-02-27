@@ -31,3 +31,11 @@ Find multi-byte characters
 ```sql
 SELECT * FROM <table> WHERE LENGTH(col) != CHAR_LENGTH(col)
 ```
+
+## git
+
+undo commit
+```shell
+git reset HEAD~
+```
+
