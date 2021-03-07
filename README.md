@@ -44,3 +44,15 @@ undo commit
 ```shell
 git reset HEAD~
 ```
+
+## disk space
+
+get disk usage of directories:
+```shell
+du -ch --max-depth=1
+```
+
+get disk usage summary:
+```shell
+df -h
+```
